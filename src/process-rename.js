@@ -6,36 +6,18 @@ const options = [
 		titleCase: false,
 		lowerCase: false,
 		upperCase: false,
-		strict: false,
 	},
 	{
-		prefix: 'Standard Title Case',
+		prefix: 'Title Case',
 		titleCase: true,
 	},
 	{
-		prefix: 'Standard Lower Case',
+		prefix: 'Lower Case',
 		lowerCase: true,
 	},
 	{
-		prefix: 'Standard Upper Case',
+		prefix: 'Upper Case',
 		upperCase: true,
-	},
-	{
-		prefix: 'Strict',
-		strict: true,
-	},
-	{
-		prefix: 'Strict Title Case',
-		titleCase: true,
-	},
-	{
-		prefix: 'Strict Lower Case',
-		lowerCase: true,
-	},
-	{
-		prefix: 'Strict Upper Case',
-		upperCase: true,
-		strict: true,
 	},
 ];
 

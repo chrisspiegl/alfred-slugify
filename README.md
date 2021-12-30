@@ -28,7 +28,7 @@ If you want to test if you like the result of the slugify process, duplicate you
   * `slugify !rename` will actually rename the files
   * `slugify !filename` will process the filename and leave the extension intact
 * You can use filters to get a specific `slugify` style
-  * You can use things like `!strict` or `!standard upper` or `!stan title` as filters at the end of your input.
+  * You can use things like `!title` or `!upper` or `!case title` as filters at the end of your input.
   * When you want to slugify the clipboard content, don't enter anything other than `slugify` or `slugify !title` and you will get the filtered list only containing title case.
 
 ## Related
