@@ -7,6 +7,6 @@ const slugifiedFilenames = doSlugifyFilename(inputArgs.input, inputArgs);
 
 for (const file of slugifiedFilenames) {
 	if (fileExistsWithCaseSync(file.old) && !fileExistsWithCaseSync(file.new)) {
-		renameSync(file.old, file.new, {overwrite: true});
+		renameSync(file.old, file.new);
 	}
 }
