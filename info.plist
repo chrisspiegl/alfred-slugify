@@ -124,6 +124,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node src/rename.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>910B18BA-B114-4274-8324-C365EEBFC2D0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -141,6 +164,63 @@
 			<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>2</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Slugify Filenames</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Copyied to Clipboard &amp; Pasted to Frontmost App</string>
+				<key>title</key>
+				<string>Slugified Selected Text</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8C17B95C-50F5-442A-B2FD-99BE968B2BBA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>641735F9-AC1A-4448-9D92-FB53E26F8EC6</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -190,29 +270,6 @@
 			<string>50B0CD10-4D52-4898-9C05-DD3A34A829C3</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node src/rename.js "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>910B18BA-B114-4274-8324-C365EEBFC2D0</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -268,63 +325,6 @@
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Copyied to Clipboard &amp; Pasted to Frontmost App</string>
-				<key>title</key>
-				<string>Slugified Selected Text</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>8C17B95C-50F5-442A-B2FD-99BE968B2BBA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>641735F9-AC1A-4448-9D92-FB53E26F8EC6</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<integer>2</integer>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Slugify Filenames</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
 				<string>Copyied to Clipboard</string>
 				<key>title</key>
 				<string>Slugified Selected Text</string>
@@ -359,85 +359,83 @@
 	<key>readme</key>
 	<string>Alfred Alfred workflow to slugify clipboard content, selected text, and filenames
 
-	https://github.com/chrisspiegl/alfred-slugify</string>
+https://github.com/chrisspiegl/alfred-slugify</string>
 	<key>uidata</key>
 	<dict>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>165</integer>
 			<key>ypos</key>
-			<integer>15</integer>
+			<integer>150</integer>
 		</dict>
 		<key>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>15</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>235</integer>
+			<integer>150</integer>
 		</dict>
 		<key>641735F9-AC1A-4448-9D92-FB53E26F8EC6</key>
 		<dict>
 			<key>note</key>
 			<string>and Paste to front most</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>515</integer>
 			<key>ypos</key>
-			<integer>155</integer>
+			<integer>150</integer>
 		</dict>
 		<key>8C17B95C-50F5-442A-B2FD-99BE968B2BBA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>685</integer>
 			<key>ypos</key>
-			<integer>155</integer>
+			<integer>150</integer>
 		</dict>
 		<key>910B18BA-B114-4274-8324-C365EEBFC2D0</key>
 		<dict>
 			<key>note</key>
 			<string>Rename File(s)</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>515</integer>
 			<key>ypos</key>
-			<integer>15</integer>
+			<integer>10</integer>
 		</dict>
 		<key>93E5501C-CA0A-49A3-888F-9921B839F899</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>685</integer>
 			<key>ypos</key>
-			<integer>300</integer>
+			<integer>295</integer>
 		</dict>
 		<key>96D583BD-F244-4660-BD07-8F6BEF4ED277</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>685</integer>
 			<key>ypos</key>
-			<integer>15</integer>
+			<integer>10</integer>
 		</dict>
 		<key>AD3E2DCA-CA7A-484A-B961-4B27689D3ECB</key>
 		<dict>
 			<key>note</key>
 			<string>Copy to Clipboard</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>515</integer>
 			<key>ypos</key>
-			<integer>300</integer>
+			<integer>295</integer>
 		</dict>
 		<key>D4A446E8-42AD-470D-8D7E-090407E46C46</key>
 		<dict>
 			<key>xpos</key>
-			<integer>190</integer>
+			<integer>315</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>155</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
 		<key>keyword</key>
 		<string>slugify</string>
-		<key>keywordpaste</key>
-		<string>slugifyp</string>
 	</dict>
 	<key>version</key>
 	<string></string>
