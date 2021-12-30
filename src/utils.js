@@ -114,10 +114,9 @@ export function slugifyLine(output, options) {
 		output = titleCase(output);
 	}
 
-	output = slugify(output, {strict: options.strict});
-
 	output = removeLeadingDashes(output);
 	output = removeTrailingDashes(output);
+	output = slugify(output, {lowercase: false});
 
 	if (options.upperCase) {
 		output = output.toUpperCase();
