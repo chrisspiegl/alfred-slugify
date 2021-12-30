@@ -1,0 +1,52 @@
+{
+  "name": "alfred-slugify",
+  "version": "0.0.0",
+  "description": "Alfred workflow to slugify clipboard content, selected text, and filenames",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "chrisspiegl/alfred-slugify",
+  "author": {
+    "name": "Chris Spiegl",
+    "email": "chris@chrisspiegl.com",
+    "url": "https://chrisspiegl.com/"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup",
+    "cu": "ncu",
+    "cu:fix": "ncu -u",
+    "test": "xo --fix"
+  },
+  "files": [
+    "icon.png",
+    "info.plist",
+    "index.js",
+    "src"
+  ],
+  "keywords": [
+    "alfred",
+    "workflow",
+    "macos",
+    "mac",
+    "slugify",
+    "folder",
+    "folders",
+    "filename",
+    "clipboard",
+    "text"
+  ],
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.1.0",
+    "alfy": "^0.12.2",
+    "discover-path": "^1.0.0",
+    "title-case": "^3.0.3"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^12.0.5",
+    "xo": "^0.47.0"
+  }
+}
