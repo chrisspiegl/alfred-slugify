@@ -39,7 +39,7 @@ function process(input) {
 	return processCopyPaste(input);
 }
 
-function fi(filter, output) {
+function filterOutput(filter, output) {
 	const filterSplit = filter.split(' ');
 	for (const filter of filterSplit) {
 		output = alfy.matches(filter, output, 'match');
@@ -49,4 +49,4 @@ function fi(filter, output) {
 }
 
 const output = process(input);
-alfy.output(filter ? fi(filter, output) : output);
+alfy.output(filter ? filterOutput(filter, output) : output);
