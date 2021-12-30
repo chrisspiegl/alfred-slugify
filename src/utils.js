@@ -79,14 +79,6 @@ export function findCommand(input) {
 	};
 }
 
-export function removeLeadingDashes(s) {
-	return s.replace(/^-+(?!$)/, '');
-}
-
-export function removeTrailingDashes(s) {
-	return s.replace(/(?!^)-+$/, '');
-}
-
 export function doSlugify(input, options) {
 	const lines = input.split('\n');
 	input = lines.length > 0 ? lines : [input];
@@ -114,8 +106,6 @@ export function slugifyLine(output, options) {
 		output = titleCase(output);
 	}
 
-	output = removeLeadingDashes(output);
-	output = removeTrailingDashes(output);
 	output = slugify(output, {lowercase: false});
 
 	if (options.upperCase) {
