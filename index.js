@@ -40,11 +40,12 @@ function process(input) {
 }
 
 function fi(filter, output) {
-  const filterSplit = filter.split(' ')
-  for (const filter of filterSplit) {
-    output = alfy.matches(filter, output, 'match');
-  }
-  return output
+	const filterSplit = filter.split(' ');
+	for (const filter of filterSplit) {
+		output = alfy.matches(filter, output, 'match');
+	}
+
+	return output;
 }
 
 const output = process(input);

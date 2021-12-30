@@ -13,7 +13,7 @@ export function constructOutput(prefix, slug) {
 			copy: slug,
 			largetype: slug,
 		},
-    match: prefix,
+		match: prefix,
 		mods: {
 			cmd: {
 				subtitle: 'Paste to front most app & copy to clipboard',
@@ -27,14 +27,14 @@ export function constructOutput(prefix, slug) {
 
 export function constructOutputRename(prefix, slug, options) {
 	return {
-    variables: {
-      action: "rename",
-    },
-    title: `Rename with ${prefix}: ${slug}`,
-    subtitle: "CAUTION: This can not be undone!",
-    match: prefix,
-    arg: JSON.stringify(options),
-  };
+		variables: {
+			action: 'rename',
+		},
+		title: `Rename with ${prefix}: ${slug}`,
+		subtitle: 'CAUTION: This can not be undone!',
+		match: prefix,
+		arg: JSON.stringify(options),
+	};
 }
 
 export function getClipboardContent() {
