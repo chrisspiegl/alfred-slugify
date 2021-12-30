@@ -1,6 +1,6 @@
 {
   "name": "alfred-slugify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Alfred workflow to slugify clipboard content, selected text, and filenames",
   "type": "module",
   "main": "index.js",
