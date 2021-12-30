@@ -10,7 +10,7 @@ let input = inputWithoutCommand || getClipboardContent();
 
 // Force File Action input to be with new lines instead of tabs!
 // NOTE: this may be problematic if content contains tabs.
-input = input.replace('\t', '\n');
+input = input.replaceAll('\t', '\n');
 
 function process(input) {
 	if (foundCommand === 'rename') {
