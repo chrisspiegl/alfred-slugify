@@ -1,16 +1,20 @@
 import alfy from 'alfy';
-import {findFilter, findCommand, isFileAction, getClipboardContent} from './src/utils.js';
+import {
+	findFilter,
+	findCommand,
+	isFileActionCaseSensitive,
+	getClipboardContent,
+} from './src/utils.js';
 import {processCopyPaste} from './src/process-copy-paste.js';
 import {processFilename} from './src/process-filename.js';
 import {processRename} from './src/process-rename.js';
 
 const {inputWithoutFilter, foundFilter: filter} = findFilter(alfy.input);
 const {inputWithoutCommand, foundCommand} = findCommand(inputWithoutFilter);
-let input = inputWithoutCommand || getClipboardContent();
-
-// Force File Action input to be with new lines instead of tabs!
-// NOTE: this may be problematic if content contains tabs.
-input = input.replaceAll('\t', '\n');
+const input = (inputWithoutCommand || getClipboardContent())
+	.replaceAll('\t', '\n')
+	.split('\n')
+	.map(element => element.trim());
 
 function process(input) {
 	if (foundCommand === 'rename') {
@@ -21,7 +25,7 @@ function process(input) {
 		return processFilename(input);
 	}
 
-	if (isFileAction(input)) {
+	if (isFileActionCaseSensitive(input)) {
 		return [
 			{
 				title: 'Rename file with Slugify',

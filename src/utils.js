@@ -43,18 +43,25 @@ export function getClipboardContent() {
 	}).stdout;
 }
 
-export function isFileAction(input) {
-	const lines = input.split('\n').filter(element => element.trim() !== '');
-	const filePathLines = lines
-		.map(line => {
-			if (input.slice(0, 1) !== '/') {
+export function isFileActionCaseSensitive(input) {
+	const filePaths = input
+		.filter(element => Boolean(element.trim()))
+		.filter(filepath => {
+			if (filepath.slice(0, 1) !== '/') {
 				return false;
 			}
 
-			return fileExistsWithCaseSync(line.trim());
-		})
-		.filter(element => element);
-	return filePathLines.length > 0;
+			return fileExistsWithCaseSync(filepath.trim());
+		});
+	return filePaths.length > 0;
+}
+
+export function fileExistsWithCaseSync(filepath) {
+	try {
+		return Boolean(discoverPathSync(filepath.trim()));
+	} catch {
+		return false;
+	}
 }
 
 export function findFilter(input) {
@@ -80,14 +87,11 @@ export function findCommand(input) {
 }
 
 export function doSlugify(input, options) {
-	const lines = input.split('\n');
-	input = lines.length > 0 ? lines : [input];
 	return input.map(line => slugifyLine(line.trim(), options)).join('\n');
 }
 
 export function doSlugifyFilename(input, options) {
-	return input.split('\n').map(line => {
-		line = line.trim();
+	return input.map(line => {
 		const {name} = path.parse(line); //=> "hello"
 		const {ext} = path.parse(line); //=> ".html"
 		const dir = path.dirname(line);
@@ -115,12 +119,4 @@ export function slugifyLine(output, options) {
 	}
 
 	return output;
-}
-
-export function fileExistsWithCaseSync(filepath) {
-	try {
-		return Boolean(discoverPathSync(filepath.trim()));
-	} catch {
-		return false;
-	}
 }
