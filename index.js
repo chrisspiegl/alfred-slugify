@@ -1,56 +1,55 @@
-import alfy from 'alfy';
+import alfy from 'alfy'
+import { processCopyPaste } from './src/process-copy-paste.js'
+import { processFilename } from './src/process-filename.js'
+import { processRename } from './src/process-rename.js'
 import {
-	findFilter,
-	findCommand,
-	isFileActionCaseSensitive,
-	getClipboardContent,
-} from './src/utils.js';
-import {processCopyPaste} from './src/process-copy-paste.js';
-import {processFilename} from './src/process-filename.js';
-import {processRename} from './src/process-rename.js';
+  fileActionAutocomplete,
+  findCommand,
+  findFilter,
+  getClipboardContent,
+  isFileActionCaseSensitive,
+  splitWorkflowInput,
+} from './src/utils.js'
 
-const {inputWithoutFilter, foundFilter: filter} = findFilter(alfy.input);
-const {inputWithoutCommand, foundCommand} = findCommand(inputWithoutFilter);
-const input = (inputWithoutCommand || getClipboardContent())
-	.replaceAll('\t', '\n')
-	.split('\n')
-	.map(element => element.trim());
+const { inputWithoutFilter, foundFilter: filter } = findFilter(alfy.input)
+const { inputWithoutCommand, foundCommand } = findCommand(inputWithoutFilter)
+const input = splitWorkflowInput(inputWithoutCommand || getClipboardContent())
 
 function run(input) {
-	if (foundCommand === 'rename') {
-		return processRename(input);
-	}
+  if (foundCommand === 'rename') {
+    return processRename(input)
+  }
 
-	if (foundCommand === 'filename') {
-		return processFilename(input);
-	}
+  if (foundCommand === 'filename') {
+    return processFilename(input)
+  }
 
-	if (isFileActionCaseSensitive(input)) {
-		return [
-			{
-				title: 'Rename file with Slugify',
-				valid: false,
-				autocomplete: `!rename ${JSON.stringify(input)}`,
-			},
-			{
-				title: 'Slugify File Name',
-				valid: false,
-				autocomplete: `!filename ${JSON.stringify(input)}`,
-			},
-		];
-	}
+  if (isFileActionCaseSensitive(input)) {
+    return [
+      {
+        title: 'Rename file with Slugify',
+        valid: false,
+        autocomplete: fileActionAutocomplete('rename', input),
+      },
+      {
+        title: 'Slugify File Name',
+        valid: false,
+        autocomplete: fileActionAutocomplete('filename', input),
+      },
+    ]
+  }
 
-	return processCopyPaste(input);
+  return processCopyPaste(input)
 }
 
 function filterOutput(filter, output) {
-	const filterSplit = filter.split(' ');
-	for (const filter of filterSplit) {
-		output = alfy.matches(filter, output, 'match');
-	}
+  const filterSplit = filter.split(' ')
+  for (const filter of filterSplit) {
+    output = alfy.matches(filter, output, 'match')
+  }
 
-	return output;
+  return output
 }
 
-const output = run(input);
-alfy.output(filter ? filterOutput(filter, output) : output);
+const output = run(input)
+alfy.output(filter ? filterOutput(filter, output) : output)

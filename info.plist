@@ -51,11 +51,26 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>C4E8A1B2-7D3F-4E91-8A6C-2F5B9D0E1A47</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C4E8A1B2-7D3F-4E91-8A6C-2F5B9D0E1A47</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
 				<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B7D21F04-8E6A-4C53-9F18-3A6C5E0D2B91</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -114,7 +129,7 @@
 	<key>createdby</key>
 	<string>Chris Spiegl</string>
 	<key>description</key>
-	<string></string>
+	<string>Alfred workflow to slugify clipboard content, selected text, and filenames</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -143,6 +158,36 @@
 			<string>910B18BA-B114-4274-8324-C365EEBFC2D0</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>renamed</string>
+						<key>outputlabel</key>
+						<string>Renamed</string>
+						<key>uid</key>
+						<string>B7D21F04-8E6A-4C53-9F18-3A6C5E0D2B91</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Skipped</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>C4E8A1B2-7D3F-4E91-8A6C-2F5B9D0E1A47</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -192,7 +237,7 @@
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Copyied to Clipboard &amp; Pasted to Frontmost App</string>
+				<string>Copied to Clipboard &amp; Pasted to Frontmost App</string>
 				<key>title</key>
 				<string>Slugified Selected Text</string>
 			</dict>
@@ -325,7 +370,7 @@
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Copyied to Clipboard</string>
+				<string>Copied to Clipboard</string>
 				<key>title</key>
 				<string>Slugified Selected Text</string>
 			</dict>
@@ -357,7 +402,9 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Alfred Alfred workflow to slugify clipboard content, selected text, and filenames
+	<string>Slugify clipboard content, text typed into Alfred, selected text, and filenames.
+
+Use the slugify keyword to copy a slug, or Command-Enter to copy and paste it into the frontmost app. The Slugify Filenames file action can copy slugified names or rename the selected files. A rename success notification is shown only when at least one file was renamed.
 
 https://github.com/chrisspiegl/alfred-slugify</string>
 	<key>uidata</key>
@@ -411,7 +458,14 @@ https://github.com/chrisspiegl/alfred-slugify</string>
 		<key>96D583BD-F244-4660-BD07-8F6BEF4ED277</key>
 		<dict>
 			<key>xpos</key>
-			<integer>685</integer>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>C4E8A1B2-7D3F-4E91-8A6C-2F5B9D0E1A47</key>
+		<dict>
+			<key>xpos</key>
+			<integer>690</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
@@ -438,8 +492,8 @@ https://github.com/chrisspiegl/alfred-slugify</string>
 		<string>slugify</string>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>0.0.2</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/chrisspiegl/alfred-slugify</string>
 </dict>
 </plist>
