@@ -2,9 +2,9 @@
 
 > [Alfred](https://alfredapp.com) workflow to slugify clipboard content, selected text, and filenames
 
-<img src="media/screenshot.png" style="width: 100%;">
+Slugify clipboard content, text entered into Alfred, selected text via Universal Actions, and filenames of selected files and folders.
 
-Slugify your clipboard content, things you enter into Alfred itself, selected text via the UniversalActions as well as Filenames of selected files!
+Requires Alfred 5 with the [Powerpack](https://alfredapp.com/powerpack/) and [Node.js](https://nodejs.org) 20+ (verified on 24).
 
 ## Install
 
@@ -12,11 +12,9 @@ Slugify your clipboard content, things you enter into Alfred itself, selected te
 npm install --global alfred-slugify
 ```
 
-*Requires [Node.js](https://nodejs.org) 14+ and the Alfred [Powerpack](https://alfredapp.com/powerpack/).*
-
 ## Usage
 
-*Careful: using slugify on files is not reversible!*
+*Careful: using slugify on files is not reversible.*
 
 If you want to test if you like the result of the slugify process, duplicate your files before running this workflow!
 
@@ -30,6 +28,21 @@ If you want to test if you like the result of the slugify process, duplicate you
 * You can use filters to get a specific `slugify` style
   * You can use things like `!title` or `!upper` or `!case title` as filters at the end of your input.
   * When you want to slugify the clipboard content, don't enter anything other than `slugify` or `slugify !title` and you will get the filtered list only containing title case.
+
+Selecting several files autocompletes `!rename` and `!filename` with the paths separated by tabs. The rename success notification is shown only when at least one file was renamed.
+
+## Development
+
+```bash
+pnpm install
+pnpm lint
+pnpm test
+pnpm release
+```
+
+## Release
+
+From a clean `main` checkout, `pnpm release` prompts for the version, publishes to npm with pnpm, and creates the GitHub release. Requires npm login and a GitHub token (`GITHUB_TOKEN`) or `gh` auth.
 
 ## Related
 
