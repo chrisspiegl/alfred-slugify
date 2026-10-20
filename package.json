@@ -10,7 +10,14 @@
     "url": "https://chrisspiegl.com/"
   },
   "license": "MIT",
-  "repository": "chrisspiegl/alfred-slugify",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisspiegl/alfred-slugify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisspiegl/alfred-slugify/issues"
+  },
+  "homepage": "https://github.com/chrisspiegl/alfred-slugify#readme",
   "keywords": [
     "alfred",
     "workflow",
