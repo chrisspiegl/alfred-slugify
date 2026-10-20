@@ -40,13 +40,13 @@
     "text"
   ],
   "dependencies": {
-    "@sindresorhus/slugify": "^2.1.0",
-    "alfy": "^0.12.2",
+    "@sindresorhus/slugify": "^2.2.0",
+    "alfy": "^0.12.3",
     "discover-path": "^1.0.0",
     "title-case": "^3.0.3"
   },
   "devDependencies": {
-    "npm-check-updates": "^12.0.5",
+    "npm-check-updates": "^12.5.12",
     "xo": "^0.47.0"
   }
 }

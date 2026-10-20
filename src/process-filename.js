@@ -22,6 +22,7 @@ const options = [
 ];
 
 export function processFilename(input) {
+  input = JSON.parse(input)
 	return options.map(options =>
 		constructOutput(
 			options.prefix,

@@ -16,7 +16,7 @@ const input = (inputWithoutCommand || getClipboardContent())
 	.split('\n')
 	.map(element => element.trim());
 
-function process(input) {
+function run(input) {
 	if (foundCommand === 'rename') {
 		return processRename(input);
 	}
@@ -30,12 +30,12 @@ function process(input) {
 			{
 				title: 'Rename file with Slugify',
 				valid: false,
-				autocomplete: `!rename ${input}`,
+				autocomplete: `!rename ${JSON.stringify(input)}`,
 			},
 			{
 				title: 'Slugify File Name',
 				valid: false,
-				autocomplete: `!filename ${input}`,
+				autocomplete: `!filename ${JSON.stringify(input)}`,
 			},
 		];
 	}
@@ -52,5 +52,5 @@ function filterOutput(filter, output) {
 	return output;
 }
 
-const output = process(input);
+const output = run(input);
 alfy.output(filter ? filterOutput(filter, output) : output);
