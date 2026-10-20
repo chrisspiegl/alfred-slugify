@@ -15,7 +15,7 @@ const { inputWithoutFilter, foundFilter: filter } = findFilter(alfy.input)
 const { inputWithoutCommand, foundCommand } = findCommand(inputWithoutFilter)
 const input = splitWorkflowInput(inputWithoutCommand || getClipboardContent())
 
-function process(input) {
+function run(input) {
   if (foundCommand === 'rename') {
     return processRename(input)
   }
@@ -51,5 +51,5 @@ function filterOutput(filter, output) {
   return output
 }
 
-const output = process(input)
+const output = run(input)
 alfy.output(filter ? filterOutput(filter, output) : output)
